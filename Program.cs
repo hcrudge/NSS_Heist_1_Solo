@@ -10,6 +10,8 @@ namespace plan_your_heist
         {
             
             int bankDifficulty = 100;
+            int BankLuck = new Random().Next(-11,11);
+            int BankLuckDifficulty = bankDifficulty + BankLuck;
 
             Console.WriteLine("Plan your heist!");
             
@@ -41,10 +43,12 @@ namespace plan_your_heist
                 gang.GangSkill += member.SkillLevel;
             }
            Console.WriteLine($"There are {gang.Members.Count} members in your gang with a total skill of {gang.GangSkill}.");
-           
+           Console.WriteLine($"The gang's total skill is {gang.GangSkill}");
+           Console.WriteLine($"The Bank's security system state of the art level is {BankLuckDifficulty}");
+
             if (gang.GangSkill >= bankDifficulty)
             {
-               Console.WriteLine("$$$$$ Success! Your gang's skill was enough to make it rain $$$$$$$$"); 
+               Console.WriteLine("$$$$$ Success! Your gang's skill was enought to trump the banks state of the art system! $$$$$$$$"); 
             }
             else 
             {
